@@ -52,6 +52,8 @@ class Translator:
         return temp + f' {ad} ' if n != '000' else ''
 
 
-
 def validate(text):
-    pass
+    try:
+        return True if 0 <= int(text) <= 999999 else False
+    except:
+        return False

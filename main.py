@@ -2,12 +2,21 @@ import flet as ft
 import utilidades
 
 def main(page: ft.Page):
+    def update_text(lbl_value, lbl_color):
+        lbl_text.value = lbl_value
+        lbl_text.color = lbl_color
+        page.update()
+
     def convert(*_):
-        pass
+        if utilidades.validate(txt_number.value):
+            update_text(translator.translate(str(txt_number.value)), 'White')
+        else:
+            update_text('La entrada no cumple con ser un numero entre 0 y 999999','Red')
 
+    translator = utilidades.Translator()
 
-    page.window.width = 500
-    page.window.height = 300
+    page.window.width = 400
+    page.window.height = 280
     page.title = 'Traductor numero a texto'
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
