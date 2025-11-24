@@ -50,3 +50,8 @@ class Translator:
     def toWord(self, n, ad=''):
         temp = self.toHundreds(n[0]) + self.toTens(n[1:])
         return temp + f' {ad} ' if n != '000' else ''
+
+
+
+def validate(text):
+    pass
